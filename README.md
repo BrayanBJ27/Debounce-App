@@ -3,7 +3,7 @@
 ## Table of Contents
 
 1. [Debounce](#debounce)
-   - [Debounce application in the App](#debounce-aplication)
+   - [Debounce application in the App](#debounce-aplication-in-the-app)
 2. [Installation](#installation)
    - [Requirements](#requirements)
    - [Clone the Repository](#clone-the-repository)
