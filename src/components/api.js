@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-// Base URL de TMDB
+// TMDB URL base
 const BASE_URL = 'https://api.themoviedb.org/3';
 
-// Función para buscar películas
+// Movie search function
 export const searchMovies = async (query, page = 1, language = 'es-ES') => {
   const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
   if (!query) {
-    return []; // Si no hay término de búsqueda, devuelve un array vacío
+    return []; // If there is no search term, it returns an empty array.
   }
 
   try {
@@ -28,7 +28,7 @@ export const searchMovies = async (query, page = 1, language = 'es-ES') => {
   }
 };
 
-// Función para obtener películas populares
+// Function to obtain popular movies
 export const getPopularMovies = async (page = 1, language = 'es-ES') => {
   const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
