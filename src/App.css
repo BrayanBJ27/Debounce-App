@@ -37,7 +37,7 @@
   }
 }
 
-/* Estilo del contenedor principal */
+/* Main container style */
 .search-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -45,7 +45,7 @@
   text-align: center;
 }
 
-/* Estilo del campo de búsqueda */
+/* Search field style */
 .search-input {
   width: 80%;
   padding: 10px;
@@ -55,7 +55,7 @@
   border-radius: 5px;
 }
 
-/* Estilo de la cuadrícula de películas */
+/* Movie grid style */
 .movies-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -63,7 +63,7 @@
   margin-top: 20px;
 }
 
-/* Estilo de cada tarjeta de película */
+/* Style of each film card */
 .movie-card {
   background: #f9f9f9;
   border-radius: 10px;
@@ -76,14 +76,14 @@
   transform: translateY(-10px);
 }
 
-/* Imagen de la película */
+/* Image of the film */
 .movie-poster {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* Detalles de la película */
+/* Film details */
 .movie-details {
   padding: 15px;
 }
@@ -99,7 +99,7 @@
   color: #777;
 }
 
-/* Estilo del contenedor de paginación */
+/* Paging container style */
 .pagination-controls {
   display: flex;
   justify-content: center;
@@ -107,7 +107,7 @@
   margin-top: 20px;
 }
 
-/* Estilo de los botones de paginación */
+/* Style of paging buttons */
 .pagination-button {
   background-color: #007bff;
   color: #fff;
@@ -129,7 +129,7 @@
   background-color: #0056b3;
 }
 
-/* Información de la paginación */
+/* Paging information */
 .pagination-info {
   font-size: 16px;
   color: #333;
