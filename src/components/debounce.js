@@ -1,37 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import { searchMovies, getPopularMovies } from './api'; // Importamos las funciones API
-import '../App.css'; // Importaremos estilos personalizados
+import { searchMovies, getPopularMovies } from './api'; // Import API functions
+import '../App.css'; // We will import custom styles
 
-const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500'; // URL base para imágenes
+const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500'; // Base URL for images
 
 const DebounceSearch = () => {
-  const [query, setQuery] = useState(''); // Término ingresado por el usuario
-  const [debouncedQuery, setDebouncedQuery] = useState(query); // Valor con debounce
-  const [movies, setMovies] = useState([]); // Lista de películas (populares o buscadas)
-  const [currentPage, setCurrentPage] = useState(1); // Página actual
-  const [totalPages, setTotalPages] = useState(0); // Total de páginas
+  const [query, setQuery] = useState(''); // User entered term
+  const [debouncedQuery, setDebouncedQuery] = useState(query); // Value with debounce
+  const [movies, setMovies] = useState([]); // List of movies (popular or wanted)
+  const [currentPage, setCurrentPage] = useState(1); // Current page
+  const [totalPages, setTotalPages] = useState(0); // Total pages
 
-  // Lógica de debounce para el término de búsqueda
+  // Debounce logic for the search term
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedQuery(query);
-    }, 500); // Espera 500ms antes de actualizar
+    }, 500); // Wait 500ms before updating
 
     return () => {
-      clearTimeout(handler); // Limpia el temporizador si el usuario sigue escribiendo
+      clearTimeout(handler); // Clears the timer if the user continues typing
     };
   }, [query]);
 
-  // Llama a la API cada vez que `debouncedQuery` o `currentPage` cambien
+  // Call the API each time `debouncedQuery` or `currentPage` changes.
   useEffect(() => {
     const fetchMovies = async () => {
       if (debouncedQuery) {
-        // Realiza búsqueda si hay un término ingresado
+        // Performs a search if there is a term entered
         const data = await searchMovies(debouncedQuery, currentPage);
         setMovies(data.results || []);
         setTotalPages(data.total_pages || 0);
       } else {
-        // Si no hay término de búsqueda, carga películas populares
+        // If there is no search term, load popular movies
         const data = await getPopularMovies(currentPage);
         setMovies(data.results || []);
         setTotalPages(data.total_pages || 0);
@@ -41,7 +41,7 @@ const DebounceSearch = () => {
     fetchMovies();
   }, [debouncedQuery, currentPage]);
 
-  // Cambiar página
+  // Change page
   const handlePageChange = (newPage) => {
     if (newPage > 0 && newPage <= totalPages) {
       setCurrentPage(newPage);
@@ -74,7 +74,7 @@ const DebounceSearch = () => {
         ))}
       </div>
 
-      {/* Controles de paginación */}
+      {/* Paging controls */}
       <div className="pagination-controls">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
