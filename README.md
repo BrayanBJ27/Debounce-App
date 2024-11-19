@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Movie Search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+1. [Debounce](#debounce)
+   - [Debounce application in the App](#debounce-aplication)
+2. [Installation](#installation)
+   - [Requirements](#requirements)
+   - [Clone the Repository](#clone-the-repository)
+   - [Install Dependencies](#install-dependencies)
+3. [Program Execution](#program-execution)
+   - [Run the Application](#run-the-application)
+4. [Evidences](#evidences)
 
-In the project directory, you can run:
+## Debounce
 
-### `npm start`
+Debouncing is a programming technique that delays the execution of a function until the user has stopped performing an action for a specified period of time. This is useful to avoid repetitive execution of intensive tasks, such as API calls or events, while the user is actively interacting with the function.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Debounce application in the App
+In the Movie Search app, debounce is used to optimize TMDB API calls. Instead of making a request every time the user types a letter in the search field, debounce ensures that requests are only made after 500ms of inactivity, reducing unnecessary resource consumption and improving the user experience.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+### Requirements
+- npm (Node Package Manager)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Clone the Repository
+```sh
+git clone [https://github.com/BrayanBJ27/gymFrontend.git](https://github.com/BrayanBJ27/Debounce-App.git)
+```
 
-### `npm run build`
+### Install Dependencies
+```sh
+npm install
+```
+## Program Execution
+### Run the Application
+```sh
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Evidences
+**Application home page**
+![image](https://github.com/user-attachments/assets/f1eb251b-5122-4b16-bdbd-6e9f7c2c484f)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Use of debounce in the search for movies**
+![image](https://github.com/user-attachments/assets/76990164-6df1-4182-bb22-6aeb160b1729)
